@@ -1,6 +1,6 @@
 try:
     from vedo import Mesh, write, load, show, Volume
-    from vedo.applications import Browser, SlicerPlotter
+    from vedo.applications import Browser, Slicer3DPlotter
 except ModuleNotFoundError:
     raise ModuleNotFoundError(
         "Mesh generation with these utils requires vedo\n"
@@ -121,10 +121,10 @@ def extract_mesh_from_mask(
 
     # Apply morphological transformations
     if closing_n_iters is not None:
-        volume = scipy.ndimage.morphology.binary_fill_holes(volume)
+        volume = scipy.ndimage.morphology.binary_fill_holes(volume).astype(int)
         volume = scipy.ndimage.morphology.binary_closing(
             volume, iterations=closing_n_iters
-        )
+        ).astype(int)
 
     if not use_marching_cubes:
         # Use faster algorithm

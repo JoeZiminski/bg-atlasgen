@@ -9,6 +9,9 @@ import json
 import time
 import multiprocessing as mp
 
+import sys
+sys.path.append(r"C:\Users\Joe\work\git-repos\bg-atlasgen")
+
 from rich.progress import track
 from pathlib import Path
 from bg_atlasapi import utils
@@ -19,6 +22,7 @@ from bg_atlasgen.wrapup import wrapup_atlas_from_data
 from bg_atlasapi.structure_tree_util import get_structures_tree
 
 PARALLEL = False
+
 
 def create_atlas(working_dir, resolution):
     # Specify information about the atlas:

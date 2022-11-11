@@ -46,8 +46,10 @@ def get_parent_id(structure_id_path, root=997):
     if structure_id_path == [root]:
         return None
     else:
-        return int(structure_id_path[-2])
-
+        try:
+            return int(structure_id_path[-2])
+        except:
+            breakpoint()
 
 def convert_structure_json_to_csv(
     structure_json_path, destination_path=None, root=997

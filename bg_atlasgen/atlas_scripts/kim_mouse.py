@@ -17,6 +17,8 @@ from allensdk.core.reference_space_cache import ReferenceSpaceCache
 # import sys
 
 # sys.path.append("./")
+import sys
+sys.path.append(r"C:\Users\Joe\work\git-repos\bg-atlasgen")
 
 from bg_atlasapi import utils
 from bg_atlasgen.mesh_utils import create_region_mesh, Region
